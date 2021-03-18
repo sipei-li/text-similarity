@@ -1,0 +1,397 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{alp}[2018/08/09 Alp Package]
+
+
+
+\newif\if@loadallpackages\@loadallpackagesfalse
+\DeclareOption{loadpackages}{\@loadallpackagestrue}
+\ProcessOptions\relax
+
+\if@loadallpackages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\RequirePackage[l2tabu, orthodox]{nag}
+
+% FONTS
+\RequirePackage[T1]{fontenc}
+
+% Replace default Latin Modern typewriter with its proportional counterpart
+% http://www.tug.dk/FontCatalogue/lmoderntypewriterprop/
+\renewcommand*\ttdefault{lmvtt}
+
+
+%%% OPTION 1 - Fourier Math + New Century Schoolbook + ParaType Sans
+
+% % Import Fourier Math (this imposes its own New Century Schoolbook type)
+% % http://www.ctan.org/tex-archive/fonts/fouriernc/
+% \RequirePackage{fouriernc}
+% \RequirePackage{amsmath}
+% % Replace with TeX Gyre Schola version of New Century Schoolbook (must scale!)
+% % http://www.tug.dk/FontCatalogue/tgschola/
+% \RequirePackage[scale=0.92]{tgschola}
+% \RequirePackage[scaled=0.88]{PTSans}
+
+%% OPTION 2 - MathDesign Math + Bitstream Charter + ParaType Sans
+
+% Import MathDesign (this brings along Bitstream Charter)
+% http://www.ctan.org/tex-archive/fonts/mathdesign/
+
+% [Remove this line to go back to the default font -- usually times new roman]
+%\RequirePackage[bitstream-charter]{mathdesign}
+
+\RequirePackage{amsfonts}
+\RequirePackage{bm}
+
+\RequirePackage{amsmath}
+\RequirePackage{pifont}
+\RequirePackage{fixmath}
+\RequirePackage[scaled=0.92]{PTSans}
+
+% \LetLtxMacro{\oldtextsc}{\textsc}
+% \renewcommand{\textsc}[1]{\oldtextsc{\scalefont{1.10}#1}}
+
+% GEOMETRY
+\@ifpackageloaded{geometry}
+    {}
+    {\RequirePackage[paper  = letterpaper,
+                     left   = 1.65in,
+                     right  = 1.65in,
+                     top    = 1.0in,
+                     bottom = 1.0in,
+                     ]{geometry}}
+
+% COLOR
+\RequirePackage[usenames,dvipsnames]{xcolor}
+\definecolor{shadecolor}{gray}{0.9}
+
+% SPACING and TEXT
+\RequirePackage[final,expansion=alltext]{microtype}
+\RequirePackage[english]{babel}
+\RequirePackage[parfill]{parskip}
+\RequirePackage{afterpage}
+\RequirePackage{framed}
+
+%redefine the leftbar environment to accept a width and coloring options
+\renewenvironment{leftbar}[1][\hsize]
+{%
+  \def\FrameCommand
+  {%
+    {\color{Gray}\vrule width 3pt}%
+    \hspace{10pt}%
+    %\hspace{0pt}\fboxsep=\FrameSep\colorbox{black!10}%
+  }%
+  \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}%
+{\endMakeFramed}
+
+
+% EDITING
+% line numbering in left margin
+\RequirePackage{lineno}
+\renewcommand\linenumberfont{\normalfont
+                             \footnotesize
+                             \sffamily
+                             \color{SkyBlue}}
+% ragged paragraphs in right margin
+\RequirePackage{ragged2e}
+\DeclareRobustCommand{\sidenote}[1]{\marginpar{
+                                    \RaggedRight
+                                    \textcolor{Plum}{\textsf{#1}}}}
+% paragraph counter in right margin
+\newcommand{\parnum}{\bfseries\P\arabic{parcount}}
+\newcounter{parcount}
+\newcommand\p{%
+    \stepcounter{parcount}%
+    \leavevmode\marginpar[\hfill\parnum]{\parnum}%
+}
+% paragraph helper
+\DeclareRobustCommand{\PP}{\textcolor{Plum}{\P} }
+
+% COUNTERS
+\renewcommand{\labelenumi}{\color{black!67}{\arabic{enumi}.}}
+\renewcommand{\labelenumii}{{\color{black!67}(\alph{enumii})}}
+\renewcommand{\labelitemi}{{\color{black!67}\textbullet}}
+
+% FIGURES
+\RequirePackage{graphicx}
+\RequirePackage[labelfont=bf]{caption}
+\RequirePackage[format=hang]{subcaption}
+\RequirePackage{wrapfig}
+
+% TABLES
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+
+% ALGORITHMS
+\RequirePackage[algoruled]{algorithm2e}
+\RequirePackage{listings}
+\RequirePackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% BIBLIOGRAPHY
+\RequirePackage{natbib}
+
+
+
+
+% HYPERREF
+\RequirePackage[colorlinks,linktoc=all]{hyperref}
+\RequirePackage[all]{hypcap}
+\hypersetup{citecolor=BurntOrange}
+\hypersetup{linkcolor=MidnightBlue}
+\hypersetup{urlcolor=MidnightBlue}
+
+% CLEVEREF must come after HYPERREF
+\RequirePackage[nameinlink]{cleveref}
+
+% COLOR DEFINITIONS
+\newcommand{\red}[1]{\textcolor{BrickRed}{#1}}
+\newcommand{\orange}[1]{\textcolor{BurntOrange}{#1}}
+\newcommand{\green}[1]{\textcolor{OliveGreen}{#1}}
+\newcommand{\blue}[1]{\textcolor{MidnightBlue}{#1}}
+\newcommand{\gray}[1]{\textcolor{black!60}{#1}}
+
+% LISTINGS DEFINTIONS
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{OliveGreen},
+    keywordstyle=\color{BurntOrange},
+    numberstyle=\tiny\color{black!60},
+    stringstyle=\color{MidnightBlue},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+\fi
+
+
+% define a paragraph header function
+\DeclareRobustCommand{\parhead}[1]{\textbf{#1}~}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\@ifpackageloaded{amsfonts}
+    {}
+    {\RequirePackage{amsfonts}}
+
+\@ifpackageloaded{bm}
+    {}
+    {\RequirePackage{bm}}
+
+% ACRONYMS
+\@ifpackageloaded{glossaries}
+    {}
+    {\RequirePackage[acronym,smallcaps,nowarn]{glossaries}
+    \glsdisablehyper
+    }
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\softplus}{softplus}
+\DeclareMathOperator*{\softmaxorg}{softmax}
+
+%\DeclareRobustCommand{\KL}[2]{\ensuremath{\textrm{KL}\left(#1\;\|\;#2\right)}}
+
+\DeclareRobustCommand{\entropy}[1]{\mathbb{H}\left[#1\right]}
+\DeclareRobustCommand{\determt}[1]{\left| #1 \right|}
+%\DeclareRobustCommand{\KL}[2]{\ensuremath{\textrm{KL}\left(#1\;\|\;#2\right)}}
+\DeclareRobustCommand{\vecv}[1]{\textrm{vec}\left(#1\right)}
+\DeclareRobustCommand{\cov}[2]{\textrm{cov}\left(#1, #2\right)}
+\DeclareRobustCommand{\E}[2]{{\mathbb{E}_{#1}} \left[#2\right]}
+\DeclareRobustCommand{\trace}[1]{\mathrm{tr}\left(#1\right)}
+
+
+\newcommand{\softmax}{\sigma}
+\newcommand\dif{\mathop{}\!\mathrm{d}}
+\newcommand{\diag}{\textrm{diag}}
+\newcommand{\supp}{\textrm{supp}}
+\newcommand{\Var}{\mathbb{V}\textrm{ar}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% bold and caligraphic symbols 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% lower-case letters
+\newcommand{\bone}{\mathbf{1}}
+\newcommand{\bzero}{\mathbf{0}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\boldf}{\mathbf{f}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bi}{\mathbf{i}}
+\newcommand{\bj}{\mathbf{j}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bl}{\mathbf{l}}
+\newcommand{\boldm}{\mathbf{m}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bo}{\mathbf{o}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bt}{\mathbf{t}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+
+\newcommand{\bell}{\mathbf{\ell}}
+
+% upper-case letters
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+% lower-case greek letters
+\newcommand{\balpha}{\bm{\alpha}}
+\newcommand{\bbeta}{\bm{\beta}}
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\blambda}{\bm{\lambda}}
+\newcommand{\bgamma}{\bm{\gamma}}
+\newcommand{\bomega}{\bm{\omega}}
+\newcommand{\bsigma}{\bm{\sigma}}
+\newcommand{\bmu}{\bm{\mu}}
+\newcommand{\brho}{\bm{\rho}}
+\newcommand{\bzeta}{\bm{\zeta}}
+\newcommand{\boldeta}{\bm{\eta}}
+\newcommand{\bphi}{\bm{\phi}}
+\newcommand{\bepsilon}{\bm{\epsilon}}
+
+% upper-case greek letters (non-romen letters)
+\newcommand{\bTheta}{\mathbf{\Theta}}
+\newcommand{\bOmega}{\mathbf{\Omega}}
+\newcommand{\bSigma}{\mathbf{\Sigma}}
+\newcommand{\bPhi}{\mathbf{\Phi}}
+\newcommand{\bPsi}{\mathbf{\Psi}}
+\newcommand{\bGamma}{\mathbf{\Gamma}}
+\newcommand{\bLambda}{\mathbf{\Lambda}}
+\newcommand{\bDelta}{\mathbf{\Delta}}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% acronyms 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newacronym{KL}{kl}{Kullback-Leibler}
+%\newacronym{ELBO}{elbo}{Evidence Lower BOund}
+%\newacronym{SGD}{sgd}{Stochastic Gradient Descent}
+%\newacronym{SVI}{svi}{Stochastic Variational Inference}
+%\newacronym{GMM}{gmm}{Gaussian Mixture Model}
+%\newacronym{LBP}{lbp}{Loopy Belief Propagation}
+%\newacronym{LDA}{lda}{Latent Dirichlet Allocation}
+%\newacronym{EP}{ep}{Expectation Propagation}
+%\newacronym{BP}{bp}{Belief Propagation}
+%
+%
+%\newacronym[plural=LOPONs,firstplural=Low-Order POlynomial Neural networks]{lopon}{lopon}{Low-Order POlynomial Neural network}
+%\newacronym[plural=FF-Quads,firstplural=feed-forward networks with quadratic activations]{ffq}{ff-quad}{feed-forward network with quadratic activations}
+%\newacronym[plural=FF-ReLUs,firstplural=feed-forward networks with ReLU activations]{ffr}{ff-relu}{feed-forward network with ReLU activations}
+%\newacronym[plural=FMs,firstplural=Factorization Machines]{fm}{fm}{Factorization Machine}
+%\newacronym[plural=PKs,firstplural=Polynomial Kernels]{pk}{pk}{Polynomial Kernel}
+%
+%\newacronym{VI}{vi}{Variational Inference}
+%\newacronym{HVI}{hvi}{Hierarchical Variational Inference}
+%
+%\newacronym[plural=GCNs,firstplural=Graph Convolutional Networks]{GCN}{gcn}{Graph Convolutional Network}
+%\newacronym[plural=MPNNs,firstplural=Message Passing Neural Networks]{MPNN}{mpnn}{Message Passing Neural Network}
+%\newacronym[plural=GPs,firstplural=Gaussian Processes]{GP}{gp}{Gaussian Process}
+%\newacronym[plural=STEMs,firstplural=Spatio-Temporal Exploratory Models]{STEM}{stem}{Spatio-Temporal Exploratory Model}
+%\newacronym[plural=MRFs,firstplural=Markov Random Fields]{MRF}{mrf}{Markov Random Field}
+%\newacronym[plural=GMRFs,firstplural=Gaussian Markov Random Fields]{GMRF}{gmrf}{Gaussian Markov Random Field}
+
+\endinput

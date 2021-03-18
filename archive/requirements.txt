@@ -1,0 +1,12 @@
+allennlp
+allennlp_models
+spacy
+tqdm
+pandas
+numpy
+tensorflow_hub
+bert-for-tf2
+transformer==3.0.0
+neuralcoref (build from source, otherwise it will cause python to crash)
+matplotlib
+# networkx

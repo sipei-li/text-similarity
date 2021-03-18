@@ -1,0 +1,13 @@
+name: text_similarity
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - pytorch=1.6.0
+  - transformers=4.3.2
+  - pandas=1.1.1
+  - scikit-learn=0.23.2
+  - pip:
+    - sentence-transformers
+    - nltk

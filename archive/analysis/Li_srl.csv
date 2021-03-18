@@ -1,0 +1,65 @@
+,word1,word2,sent1,sent2,human_sim,srl_sim
+0,cord,smile,"Cord is strong, thick string.","A smile is the expression that you have on your face when you are pleased or amused, or when you are being friendly.",0.01,0.0
+1,rooster,voyage,A rooster is an adult male chicken.,A voyage is a long journey on a ship or in a spacecraft.,0.005,0.0
+2,noon,string,Noon is 12 o’clock in the middle of the day.,"String is thin rope made of twisted threads, used for tying things together or tying up parcels.",0.0125,0.0
+3,fruit,furnace,Fruit or a fruit is something which grows on a tree or bush and which contains seeds or a stone covered by a substance that you can eat.,"A furnace is a container or enclosed space in which a very hot fire is made, for example to melt metal, burn rubbish, or produce steam.",0.0475,2.8424663812646727
+4,autograph,shore,An autograph is the signature of someone famous which is specially written for a fan to keep.,"The shores or shore of a sea, lake, or wide river is the land along the edge of it",0.005,0.0
+5,automobile,wizard,An automobile is a car.,"In legends and fairy stories, a wizard is a man who has magic powers.",0.02,0.0
+6,grin,implement,A grin is a broad smile.,An implement is a tool or other pieces of equipment.,0.005,0.0
+7,asylum,fruit,An asylum is a psychiatric hospital.,Fruit or a fruit is something which grows on a tree or bush and which contains seeds or a stone covered by a substance that you can eat.,0.005,0.0
+8,asylum,monk,An asylum is a psychiatric hospital.,A monk is a member of a male religious community that is usually separated from the outside world.,0.0375,0.0
+9,graveyard,madhouse,"A graveyard is an area of land, sometimes near a church, where dead people are buried.","If you describe a place or situation as a madhouse,you mean that it is full of confusion and noise.",0.0225,0.0
+10,glass,magician,Glass is a hard transparent substance that is used to make things such as windows and bottles.,A magician is a person who entertains people by doing magic tricks.,0.0075,0.0
+11,boy,rooster,A boy is a child who will grow up to be a man.,A rooster is an adult male chicken.,0.1075,0.0
+12,cushion,jewel,"A cushion is a fabric case filled with soft material, which you put on a seat to make it more comfortable.","A jewel is a precious stone used to decorate valuable things that you wear, such as rings or necklaces.",0.0525,2.0509519470103115
+13,monk,slave,A monk is a member of a male religious community that is usually separated from the outside world.,A slave is someone who is the property of another person and has to work for that person.,0.045,0.0
+14,asylum,cemetery,An asylum is a psychiatric hospital.,A cemetery is a place where dead people’s bodies or their ashes are buried.,0.0375,0.0
+15,coast,forest,The coast is an area of land that is next to the sea.,A forest is a large area where trees grow close together.,0.0475,0.0
+16,grin,lad,A grin is a broad smile.,A lad is a young man or boy.,0.0125,0.0
+17,shore,woodland,"The shores or shore of a sea, lake, or wide river is the land along the edge of it.",Woodland is land with a lot of trees.,0.0825,0.0
+18,monk,oracle,A monk is a member of a male religious community that is usually separated from the outside world.,"In ancient times, an oracle was a priest or priestess who made statements about future events or about the truth.",0.1125,1.3546000903092332
+19,boy,sage,A boy is a child who will grow up to be a man.,A sage is a person who is regarded as being very wise.,0.0425,0.0
+20,automobile,cushion,An automobile is a car.,"A cushion is a fabric case filled with soft material, which you put on a seat to make it more comfortable.",0.02,0.0
+21,mound,shore,A mound of something is a large rounded pile of it.,"The shores or shore of a sea, lake, or wide river is the land along the edge of it.",0.035,0.0
+22,lad,wizard,A lad is a young man or boy,"In legends and fairy stories, a wizard is a man who has magic powers.",0.0325,0.0
+23,forest,graveyard,A forest is a large area where trees grow close together.,"A graveyard is an area of land, sometimes near a church, where dead people are buried.",0.065,0.0
+24,food,rooster,Food is what people and animals eat.,A rooster is an adult male chicken.,0.055,0.0
+25,cemetery,woodland,A cemetery is a place where dead people’s bodies or their ashes are buried.,Woodland is land with a lot of trees.,0.0375,0.0
+26,shore,shore,"The shores or shore of a sea, lake, or wide river is the land along the edge of it.",A voyage is a long journey on a ship or in a spacecraft.,0.02,0.0
+27,bird,woodland,"A bird is a creature with feathers and wings, females lay eggs, and most birds can fly.",Woodland is land with a lot of trees.,0.0125,0.0
+28,coast,hill,The coast is an area of land that is next to the sea.,A hill is an area of land that is higher than the land that surrounds it.,0.1,0.0
+29,furnace,implement,"A furnace is a container or enclosed space in which a very hot fire is made, for example to melt metal, burn rubbish or produce steam.",An implement is a tool or other piece of equipment.,0.05,0.0
+30,crane,rooster,A crane is a large machine that moves heavy things by lifting them in the air.,A rooster is an adult male chicken.,0.02,0.0
+31,hill,woodland,A hill is an area of land that is higher than the land that surrounds it.,Woodland is land with a lot of trees.,0.145,0.0
+32,car,journey,A car is a motor vehicle with room for a small number of passengers.,"When you make a journey, you travel from one place to another.",0.0725,0.0
+33,cemetery,mound,A cemetery is a place where dead people’s bodies or their ashes are buried.,A mound of something is a large rounded pile of it.,0.0575,0.0
+34,glass,jewel,Glass is a hard transparent substance that is used to make things such as windows and bottles.,"A jewel is a precious stone used to decorate valuable things that you wear, such as rings or necklaces.",0.1075,2.246109154152474
+35,magician,oracle,A magician is a person who entertains people by doing magic tricks.,"In ancient times, an oracle was a priest or priestess who made statements about future events or about the truth.",0.13,0.0
+36,crane,implement,A crane is a large machine that moves heavy things by lifting them in the air.,An implement is a tool or other piece of equipment.,0.185,0.0
+37,brother,lad,Your brother is a boy or a man who has the same parents as you.,A lad is a young man or boy.,0.1275,0.0
+38,sage,wizard,A sage is a person who is regarded as being very wise.,"In legends and fairy stories, a wizard is a man who has magic powers.",0.1525,0.0
+39,oracle,sage,"In ancient times, an oracle was a priest or priestess who made statements about future events or about the truth.",A sage is a person who is regarded as being very wise.,0.2825,1.3132320735633094
+40,bird,crane,"A bird is a creature with feathers and wings, females lay eggs, and most birds can fly.",A crane is a large machine that moves heavy things by lifting them in the air.,0.035,0.0
+41,bird,cock,"A bird is a creature with feathers and wings, females lay eggs, and most birds can fly.",A cock is an adult male chicken.,0.1625,0.0
+42,food,fruit,Food is what people and animals eat.,Fruit or a fruit is something which grows on a tree or bush and which contains seeds or a stone covered by a substance that you can eat,0.2425,0.0
+43,brother,monk,Your brother is a boy or a man who has the same parents as you.,A monk is a member of a male religious community that is usually separated from the outside world.,0.045,0.0
+44,asylum,madhouse,An asylum is a psychiatric hospital.,"If you describe a place or situation as a madhouse, you mean that it is full of confusion and noise.",0.215,0.0
+45,furnace,stove,"A furnace is a container or enclosed space in which a very hot fire is made, for example, to melt metal, burn rubbish, or produce steam.","A stove is a piece of equipment which provides heat, either for cooking or for heating a room.",0.3475,0.0
+46,magician,wizard,A magician is a person who entertains people by doing magic tricks,"In legends and fairy stories, a wizard is a man who has magic powers.",0.355,0.0
+47,hill,mound,A hill is an area of land that is higher than the land that surrounds it.,A mound of something is a large rounded pile of it.,0.2925,0.0
+48,cord,string,"Cord is strong, thick string.","String is thin rope made of twisted threads, used for tying things together or tying up parcels.",0.47,0.0
+49,glass,tumbler,Glass is a hard transparent substance that is used to make things such as windows and bottles.,A tumbler is a drinking glass with straight sides.,0.1375,0.0
+50,grin,smile,A grin is a broad smile.,"A smile is the expression that you have on your face when you are pleased or amused, or when you are being friendly.",0.485,0.0
+51,serf,slave,"In former times, serfs were a class of people who had to work on a particular person’s land and could not leave without that person’s permission.",A slave is someone who is the property of another person and has to work for that person.,0.4825,1.0000001192092896
+52,journey,voyage,"When you make a journey, you travel from one place to another.",A voyage is a long journey on a ship or in a spacecraft.,0.36,0.0
+53,autograph,signature,An autograph is the signature of someone famous which is specially written for a fan to keep.,"Your signature is your name, written in your own characteristic way, often at the end of a document to indicate that you wrote the document or that you agree with what it says.",0.405,2.230616832575593
+54,coast,shore,The coast is an area of land that is next to the sea.,"The shores or shore of a sea, lake, or wide river is the land along the edge of it.",0.5875,0.0
+55,forest,woodland,A forest is a large area where trees grow close together.,Woodland is land with a lot of trees.,0.6275,0.0
+56,implement,tool,An implement is a tool or other pieces of equipment.,A tool is any instrument or simple piece of equipment that you hold in your hands and use to do a particular kind of work.,0.59,0.0
+57,cock,rooster,A cock is an adult male chicken.,A rooster is an adult male chicken.,0.8625,0.0
+58,boy,lad,A boy is a child who will grow up to be a man.,A lad is a young man or boy,0.58,0.0
+59,cushion,pillow,"A cushion is a fabric case filled with soft material, which you put on a seat to make it more comfortable.",A pillow is a rectangular cushion which you rest your head on when you are in bed.,0.5225,1.0553045687727571
+60,cemetery,graveyard,A cemetery is a place where dead people’s bodies or their ashes are buried.,"A graveyard is an area of land, sometimes near a church, where dead people are buried.",0.7725,1.8825794119001014
+61,automobile,car,An automobile is a car.,A car is a motor vehicle with room for a small number of passengers.,0.5575,0.0
+62,midday,noon,Midday is 12 o’clock in the middle of the day.,Noon is 12 o’clock in the middle of the day.,0.955,0.0
+63,gem,jewel,A gem is a jewel or stone that is used in jewellery,"A jewel is a precious stone used to decorate valuable things that you wear, such as rings or necklaces.",0.6525,1.0
